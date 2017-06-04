@@ -2,10 +2,10 @@
   %h4 Google Sheets API - Test
   %ul.nav.nav-pills.nav-stacked
     %li.active
-      %a{:href => "#section1"}
+      = link_to root_path do
         %span.glyphicon.glyphicon-home{"aria-hidden" => "true"}
         Home
     %li
-      %a{:href => "#section2"}
+      = link_to items_path do
         %span.glyphicon.glyphicon-list-alt{"aria-hidden" => "true"}
         Registros

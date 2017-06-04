@@ -1,6 +1,10 @@
 .page-header
   %h4 BEM-VINDO
-%h3 Últimos registros
+
+%h3
+  Últimos registros
+  = link_to "Novo Registro", new_item_path, class: "btn btn-primary pull-right"
+
 
 .col-md-3
   .panel.panel-default
@@ -10,6 +14,10 @@
       %ul.list-unstyled
         %li <strong>Nome:</strong> Nome do registro
         %li <strong>Condição:</strong> Condicionado
-        %li <strong>Valor:</strong> 1458,00
+        %li <strong>Valor Original:</strong> 1458,00
+        %li <strong>Porcentagem:</strong> 3%
         %li <strong>Tempo:</strong> 3,5 anos
-        %li <strong>Coeficiente:</strong> 3,5 anos
+        %li
+          <strong>Valor Atualizado:</strong>
+          - value = 1458.00 * ((1 - (3.0/100)) ** 3.5)
+          = "#{value.round(2)}"
